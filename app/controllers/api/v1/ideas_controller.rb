@@ -9,6 +9,6 @@ class Api::V1::IdeasController < ApiController
   end
 
   def destroy
-    respond_with Idea.destroy(params[:id])
+    respond_with Idea.delete(params[:id])
   end 
 end
