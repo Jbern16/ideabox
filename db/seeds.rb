@@ -4,3 +4,12 @@ Idea.create({ data: {
     quality: "Genius"
   }
 })
+
+Idea.create({ data: {
+    title: "title2",
+    body: "bodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybody
+           bodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybody
+           bodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybody", 
+    quality: "Genius"
+  }
+})
