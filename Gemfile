@@ -10,6 +10,7 @@ gem "jquery-rails"
 gem 'responders'
 gem 'unicorn'
 
+
 group :development, :test do
   gem 'rspec'
   gem 'pry'
