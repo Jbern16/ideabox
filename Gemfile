@@ -5,10 +5,11 @@ gem 'sass-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem "sprockets"
 gem "jquery-rails"
 gem 'responders'
 gem 'unicorn'
+gem 'sprockets', '>= 3.0.0'
+gem 'sprockets-es6'
 
 group :development, :test do
   gem 'rspec'
