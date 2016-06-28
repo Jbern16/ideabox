@@ -1,9 +1,13 @@
-  var prependIdeaLi = function prependIdeaLi(selector, ideaData){
-    $(`#${selector}`).prepend(`<li> ${ideaData} </li>`)
+  var prependIdeaBody = function prependIdeaLi(selector, body, id){
+     $(`#${selector}`).prepend(`<li id="body${id}"> ${body} </li>`)
   }
 
-  var prependIdeaHeader = function(selector, ideaData){
-    $(`#${selector}`).prepend(`<h3> ${ideaData} </h3>`)
+  var prependIdeaQuality = function prependIdeaLi(selector, quality, id){
+     $(`#${selector}`).prepend(`<li id="quality${id}"> ${quality} </li>`)
+  }
+
+  var prependIdeaHeader = function(selector, header, id){
+    $(`#${selector}`).prepend(`<h3 id="header${id}"> ${header} </h3>`)
   }
 
   var prependDeleteButton = function(selector, id){
@@ -32,25 +36,30 @@
   var prependVoteButtons = function(selector, response){
     $(`#${selector}`)
     .prepend(
-      `<span>
-        <button type="button" class="upvoteIdea" data-id=${response.id}, data-quality=${response.quality}>
+      `<span data-quality=${response.data.quality}>
+        <button type="button" class="upvoteIdea" data-id=${response.id}>
           Upvote
         </button>
-        <button type="button" class="downvoteIdea" data-id=${response.id}, data-quality=${response.quality}>
+        <button type="button" class="downvoteIdea" data-id=${response.id}>
           Downvote
         </button>
       </span>`
     )}
 
+  
+  var createPayload = function(payload, quality){
+    return {'body': payload.body, 'title': payload.title, 'quality': quality}  
+  }
+
 
   var prependIdea = function(response){
     let selector = `idea${response.id}`
-    $("#ideaList").prepend(`<div id=${selector} data-idea=${response.data}></div>`)
+    $("#ideaList").prepend(`<div id=${selector} data-body=${response.data.body} data-title=${response.data.title}></div>`)
     prependDeleteButton(selector, response)
-    prependVoteButtons(selector, response.id)
-    prependIdeaLi(selector, response.data.quality)
-    prependIdeaLi(selector, truncate(response.data.body))
-    prependIdeaHeader(selector, response.data.title)
+    prependVoteButtons(selector, response)
+    prependIdeaQuality(selector, response.data.quality, response.id)
+    prependIdeaBody(selector, truncate(response.data.body), response.id)
+    prependIdeaHeader(selector, response.data.title, response.id)
   }
 
 

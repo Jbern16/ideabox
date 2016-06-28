@@ -9,8 +9,9 @@ class Api::V1::IdeasController < ApiController
   end
 
   def update
-    idea = Idea.find(params[:id]).update(data: idea_params)
-    respond_with idea
+    idea = Idea.find(params[:id])
+    idea.update(data: idea_params)
+    respond_with idea, json: idea
   end 
 
   def destroy
