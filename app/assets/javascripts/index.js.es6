@@ -5,15 +5,15 @@ $(document).ready(function() {
         var title   =  value.data.title
         var body    =  truncate(value.data.body)
         var quality =  value.data.quality
-        $("#ideaList").append(`<h3> ${title} </h3>`)
-        appendIdeaLi("ideaList", body)
-        appendIdeaLi("ideaList", quality)
+        prependIdeaLi("ideaList", quality)
+        prependIdeaLi("ideaList", body)
+        $("#ideaList").prepend(`<h3> ${title} </h3>`)
      });  
     }
   );
 
-  var appendIdeaLi = function(selector, ideaData){
-    $(`#${selector}`).append(`<li> ${ideaData} </li>`)
+  var prependIdeaLi = function(selector, ideaData){
+    $(`#${selector}`).prepend(`<li> ${ideaData} </li>`)
   }
 
   var truncate = function(words){
