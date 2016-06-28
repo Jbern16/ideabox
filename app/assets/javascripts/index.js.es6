@@ -13,7 +13,7 @@ $(document).ready(function() {
   );
 
   var appendIdeaLi = function(selector, ideaData){
-    $("#" + selector).append("<li>" + ideaData ˝+ "</li>")
+    $(`#${selector}`).append(`<li> ${ideaData} </li>`)
   }
 
   var truncate = function(words){
