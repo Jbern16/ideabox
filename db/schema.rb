@@ -17,9 +17,9 @@ ActiveRecord::Schema.define(version: 20160627191741) do
   enable_extension "plpgsql"
 
   create_table "ideas", force: :cascade do |t|
-    t.jsonb    "data",       default: {}, null: false
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.jsonb    "data",       default: {"quality"=>"Swill"}, null: false
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
   end
 
 end
