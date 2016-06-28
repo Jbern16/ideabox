@@ -2,12 +2,10 @@ require 'rails_helper'
 
 describe "POST api/v1/ideas" do 
   it "it creates a new idea in the DB" do
-    data = { data: {
-      title: "title",
-      body: "bodybodybodybody", 
-      quality: "Genius"
-      }
-    }
+    data = { title: "title",
+             body: "bodybodybodybody", 
+             quality: "Genius"
+            }
 
     post '/api/v1/ideas', data
 
@@ -21,6 +19,7 @@ describe "POST api/v1/ideas" do
       "created_at"=>parse_date(idea.created_at),
       "updated_at"=>parse_date(idea.updated_at)
       })
-    end 
+    
   end 
+end 
 

@@ -7,7 +7,12 @@
   }
 
   var prependDeleteButton = function(selector, id){
-    $(`#${selector}`).prepend(`<button type="button" class="deleteIdea" data-id=${id}>Delete</button>`) 
+    $(`#${selector}`)
+    .prepend(
+      `<button type="button" class="deleteIdea" data-id=${id}>
+      Delete
+      </button>`
+    ) 
   }
 
   var truncate = function(words){
@@ -24,16 +29,28 @@
     $("#body").val("")
   }
 
- 
+  var prependVoteButtons = function(selector, response){
+    $(`#${selector}`)
+    .prepend(
+      `<span>
+        <button type="button" class="upvoteIdea" data-id=${response.id}, data-quality=${response.quality}>
+          Upvote
+        </button>
+        <button type="button" class="downvoteIdea" data-id=${response.id}, data-quality=${response.quality}>
+          Downvote
+        </button>
+      </span>`
+    )}
+
+
   var prependIdea = function(response){
     let selector = `idea${response.id}`
-    $("#ideaList").prepend(`<div id=${selector}></div>`)
-    prependDeleteButton(selector, response.id)
+    $("#ideaList").prepend(`<div id=${selector} data-idea=${response.data}></div>`)
+    prependDeleteButton(selector, response)
+    prependVoteButtons(selector, response.id)
     prependIdeaLi(selector, response.data.quality)
     prependIdeaLi(selector, truncate(response.data.body))
     prependIdeaHeader(selector, response.data.title)
   }
 
-  var deleteData = function(id){
-    
-  }
+
