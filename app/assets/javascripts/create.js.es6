@@ -9,6 +9,8 @@ $(document).ready(function() {
       dataType: "JSON",
       success: function (response) {
         prependIdea(response)
+        $("#title").val("")
+        $("#body").val("")
       }
     });
   })
