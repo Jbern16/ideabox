@@ -9,15 +9,8 @@ $(document).ready(function() {
       dataType: "JSON",
       success: function (response) {
         prependIdea(response)
-        $("#title").val("")
-        $("#body").val("")
+        clearText
       }
     });
   })
-
-  var prependIdea = function(response){
-    $("#ideaList").prepend(`<li> ${response.data.quality} </li>`)
-    $("#ideaList").prepend(`<li> ${response.data.body} </li>`)
-    $("#ideaList").prepend(`<h3> ${response.data.title} </h3>`)
-  }
 });
