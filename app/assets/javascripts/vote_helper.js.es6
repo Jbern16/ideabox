@@ -1,4 +1,4 @@
-var getPayload = function(button){
+var getPayloadVote = function(button){
     return {
       "body":  $(button).parent().parent().data("body"),
       "title": $(button).parent().parent().data("title")
