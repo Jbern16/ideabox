@@ -33,6 +33,7 @@ $(document).ready(() => {
     return {
       "body": $(`#body${id}`).text(),
       "title": $(`#header${id}`).text(),
+      "quality": $(`#quality${id}`).text(), 
     }
   }
 })
