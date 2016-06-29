@@ -7,10 +7,10 @@ $(document).ready(() => {
       url: "/api/v1/ideas",
       data: value,
       dataType: "JSON",
-      success: response => {
-        alert("thank you that will be fine")
+      success: function(response) {
         prependIdea(response)
-        clearText
+        $("#titleCreate").val("")
+        $("#bodyCreate").val("")
       }
     });
   })

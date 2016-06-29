@@ -34,11 +34,6 @@
       return words  
   }
 
-  const clearText = function(){
-    $("#title").val("")
-    $("#body").val("")
-  }
-
   const prependVoteButtons = function(selector, response){
     $(`#${selector}`)
     .prepend(
