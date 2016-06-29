@@ -15,8 +15,7 @@ const sortIdeasDesc = function(ideas){
     let qualities = findQuality(node1, node2) 
     let quality1 = qualities.quality1
     let quality2 = qualities.quality2
-
-    key = sortKey
+    let key = sortKey
       if(key()[quality1] > key()[quality2]){
         return 1
       }
