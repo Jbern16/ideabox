@@ -1,6 +1,6 @@
-$(document).ready(function() {
+$(document).ready(() => {
   $.getJSON("/api/v1/ideas",
-    function (data) {
+    data => {
       $.each(data, function (indexInArray, value) {
         prependIdea(value)
      });  

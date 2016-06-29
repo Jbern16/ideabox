@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(() => {
 
   $("#ideaList").on("click", ".upvoteIdea", function(){
     let self = $(this)
@@ -22,7 +22,7 @@ $(document).ready(function(){
       url: `/api/v1/ideas/${id}`,
       data: payload,
       dataType: "JSON",
-      success: function (response) {
+      success: response => {
         let quality = response.data.quality
         button.parent().data('quality', quality)
         button.parent().attr('data-quality', quality)

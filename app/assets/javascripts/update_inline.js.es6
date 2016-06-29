@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(() => {
   $("#ideaList").on("focus", ".ideaBody", function(){
     let id = $(this).parent().data("id")
     $(this).on("blur", function(){
@@ -22,9 +22,7 @@ $(document).ready(function(){
       url: `/api/v1/ideas/${id}`,
       data: payload,
       dataType: "JSON",
-      success: function (response) {
-        console.log(response)
-      }
+      success: response => {}
     });
   }
 
