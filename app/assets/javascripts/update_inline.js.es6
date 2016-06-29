@@ -22,7 +22,10 @@ $(document).ready(() => {
       url: `/api/v1/ideas/${id}`,
       data: payload,
       dataType: "JSON",
-      success: response => {}
+      success: response => {
+        let text = $(`#body${response.id}`).text()
+        $(`#body${response.id}`).text(truncate(text))
+      }
     });
   }
 

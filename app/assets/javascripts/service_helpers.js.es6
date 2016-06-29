@@ -22,7 +22,13 @@
   const truncate = function(words){
     let length = 100
     if(words.length > length){
-      return words.substring(0, 100) + "..."
+      let chars  = words.split("").slice(100, -1)
+      let charsBreakpoint = chars.findIndex(function(element){
+        return element === " "
+      })
+      let breakpoint = (length) + charsBreakpoint 
+      console.log(breakpoint)
+      return words.substring(0, breakpoint) + " ..."
     }
     else 
       return words  
