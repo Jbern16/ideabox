@@ -1,7 +1,7 @@
 $(document).ready(() => {
   $('#newIdea').submit(function(event){
     event.preventDefault()
-    var value = $("#newIdea").serialize()
+    let value = $("#newIdea").serialize()
     $.ajax({
       type: "POST",
       url: "/api/v1/ideas",
