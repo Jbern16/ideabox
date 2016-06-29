@@ -1,10 +1,12 @@
 $(document).ready(() => {
   let sorts = [sortIdeasDesc, sortIdeasAsc]
+  let texts = ["See Your Worst Ideas", "See Your Best Ideas"]
   $("#sort").on("click", function(){
     let ideas = $("#ideaList").children("div").map(function(){
                     return $(this)})
     let properSort = sorts.reverse()[1] 
     replaceWithSorted(properSort(ideas))
+    $(this).text(texts.reverse()[1])
   })
 })
 
@@ -45,7 +47,6 @@ const sortIdeasAsc = function(ideas){
       }
   })
 }
-
 
 const findQuality = function(node1, node2){
   return {"quality1": $(node1).children(".quality").text(),
