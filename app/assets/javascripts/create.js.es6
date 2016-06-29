@@ -8,9 +8,10 @@ $(document).ready(() => {
       data: value,
       dataType: "JSON",
       success: response => {
+        alert("thank you that will be fine")
         prependIdea(response)
         clearText
       }
     });
   })
-});
+})

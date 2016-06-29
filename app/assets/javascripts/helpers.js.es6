@@ -54,7 +54,7 @@
 
   const prependIdea = function(response){
     let selector = `idea${response.id}`
-    $("#ideaList").prepend(`<div id=${selector} data-id=${response.id} data-body=${response.data.body} data-title=${response.data.title}></div>`)
+    $("#ideaList").prepend(`<div id=${selector} class="eachIdea" data-id=${response.id} data-body=${response.data.body} data-title=${response.data.title}></div>`)
     prependDeleteButton(selector, response.id)
     prependVoteButtons(selector, response)
     prependIdeaQuality(selector, response.data.quality, response.id)

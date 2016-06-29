@@ -1,0 +1,61 @@
+body {
+  font-family: 'Homemade Apple', cursive;
+  background-color: seashell;
+}
+
+.hero {
+   text-align: center;
+   border-bottom: 3px dashed;
+   font-size: 36px;
+   color: white;
+   background-image: url("https://i.ytimg.com/vi/voWpbz1De_M/maxresdefault.jpg");
+   background: cover;
+}
+
+
+
+#newIdea {
+  text-align: center;
+  width: 50%;
+  margin: auto;
+  border: 2px dashed;
+  box-shadow: 20px 20px 20px;
+
+ input {
+    margin-bottom: 2%;
+    width: 40vh;
+  }
+}
+
+.search {
+    text-align: center;
+  
+  #search {
+    width: 50vh;
+    border: 2px solid black;
+    height: 5vh;
+  }
+}
+
+#ideaList {
+  display: inline-flex;
+  font-family: 'Chewy', cursive; 
+  flex-wrap: wrap;
+  
+  .eachIdea {
+    width: 50vh;
+    list-style: none;
+    text-align: center;
+    border: 3px dotted black;
+    margin: 1% 1% 1% 1%;
+    padding-bottom: 2%;
+    box-shadow: 2px 2px 2px 2px;
+
+    li {
+      padding-top: 2%;
+      padding-bottom: 2%;
+    }
+  }
+
+
+} 
