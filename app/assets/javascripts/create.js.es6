@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(() => {
   $('#newIdea').submit(function(event){
     event.preventDefault()
     var value = $("#newIdea").serialize()
@@ -7,7 +7,7 @@ $(document).ready(function() {
       url: "/api/v1/ideas",
       data: value,
       dataType: "JSON",
-      success: function (response) {
+      success: response => {
         prependIdea(response)
         clearText
       }

@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(() => {
   $('#ideaList').on('click', '.deleteIdea', function() {
     let clickedButton = this 
     let id = $(this).data("id");
@@ -6,7 +6,7 @@ $(document).ready(function(){
       type: "DELETE",
       url: `/api/v1/ideas/${id}`,
       dataType: "dataType",
-      success: function(response) {
+      success: response => {
         $(clickedButton).parent().remove()
       }
     })
