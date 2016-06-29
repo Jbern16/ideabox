@@ -3,7 +3,7 @@
   }
 
   const prependIdeaQuality = function prependIdeaLi(selector, quality, id){
-     $(`#${selector}`).prepend(`<li id="quality${id}"> ${quality}</li>`)
+     $(`#${selector}`).prepend(`<li class="quality" id="quality${id}">${quality}</li>`)
   }
 
   const prependIdeaHeader = function(selector, header, id){

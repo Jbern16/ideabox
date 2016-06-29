@@ -25,6 +25,13 @@ body {
     margin-bottom: 2%;
     width: 40vh;
   }
+
+  #createIdea {
+    &:hover {
+      background-color: white;
+      color: red;
+    }
+  }
 }
 
 .search {
@@ -34,6 +41,21 @@ body {
     width: 50vh;
     border: 2px solid black;
     height: 5vh;
+  }
+}
+
+.sort {
+  margin-top: 1%;
+  text-align: center;
+
+  #sort {
+    width: 40vh;
+    height: 4vh;
+    
+    &:hover {
+      background-color: white;
+      color: red;
+    }
   }
 }
 
