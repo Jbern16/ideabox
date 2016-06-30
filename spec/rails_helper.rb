@@ -3,9 +3,15 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'spec_helper'
 require 'rspec/rails'
+require 'capybara'
+require 'database_cleaner'
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
+Capybara::Webkit.configure do |config|
+  config.allow_url("fonts.googleapis.com")
+  config.allow_url("i.ytimg.com")
+end
 
 ActiveRecord::Migration.maintain_test_schema!
 
