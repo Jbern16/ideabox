@@ -4,47 +4,38 @@ $(document).ready(() => {
   $("#sort").on("click", function(){
     let ideas = $("#ideaList").children("div").map(function(){
                     return $(this)})
-    let properSort = sorts.reverse()[1] 
+    let properSort = sorts.reverse()[1]
     replaceWithSorted(properSort(ideas))
     $(this).text(texts.reverse()[1])
   })
 })
 
-const sortIdeasDesc = function(ideas){
+const sortIdeas = function(ideas, order){
   return ideas.sort(function(node1, node2){
-    let qualities = findQuality(node1, node2) 
+    let qualities = findQuality(node1, node2)
     let quality1 = qualities.quality1
     let quality2 = qualities.quality2
     let key = sortKey
+    let operator = 0
       if(key()[quality1] > key()[quality2]){
-        return 1
+        operator = 1
       }
       else if(key()[quality1] < key()[quality2]){
-        return -1
+        operator = -1
       }
-      else{
-        return 0
+      if (order === "Asc") {
+        operator = operator * -1
       }
+      return operator
   })
 }
 
-const sortIdeasAsc = function(ideas){
-  return ideas.sort(function(node1, node2){
-    let qualities = findQuality(node1, node2) 
-    let quality1 = qualities.quality1
-    let quality2 = qualities.quality2
+const sortIdeasDesc = function(ideas){
+  return sortIdeas(ideas, "Desc")
+}
 
-    key = sortKey
-      if(key()[quality1] > key()[quality2]){
-        return -1
-      }
-      else if(key()[quality1] < key()[quality2]){
-        return 1
-      }
-      else{
-        return 0
-      }
-  })
+const sortIdeasAsc = function(ideas){
+  return sortIdeas(ideas, "Asc")
 }
 
 const findQuality = function(node1, node2){
@@ -61,6 +52,6 @@ const sortKey = function(){
 const replaceWithSorted = function(sorted){
   $("#ideaList").children("div").remove()
   $.each(sorted, function(index, e) {
-    $("#ideaList").prepend(e[0]) 
+    $("#ideaList").prepend(e[0])
   });
 }
